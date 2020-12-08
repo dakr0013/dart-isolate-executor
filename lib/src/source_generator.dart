@@ -25,6 +25,7 @@ class SourceGenerator {
     final typeSource = (await _getClass(executableType)).toSource();
     var builder = new StringBuffer();
 
+    builder.writeln("// @dart=2.9"); //see https://dart.dev/null-safety/unsound-null-safety#testing-or-running-mixed-version-programs
     builder.writeln("import 'dart:async';");
     builder.writeln("import 'dart:isolate';");
     builder.writeln("import 'dart:mirrors';");
